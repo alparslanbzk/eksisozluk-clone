@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Posts.module.css"
-import Entry from "../Entry/Entry"
-import Banner from "../Banner/Banner"
+import Entry from "../Entry"
+import Banner from "../Banner"
 
 const Posts = () => {
     return (

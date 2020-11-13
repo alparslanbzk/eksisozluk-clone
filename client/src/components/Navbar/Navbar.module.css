@@ -8,6 +8,16 @@
 
 }
 
+.trend {
+    height: 20px;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border:1px solid red;
+}
+
 .toptitle {
     color:#888;
     font-weight: 400;
@@ -16,12 +26,21 @@
     margin-top:25px;
 }
 
+.settingsicon {
+    width: 12px;
+    height: 12px;
+}
+
 .title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+}
+
+.title:hover {
+    background-color: red;
 }
 
 

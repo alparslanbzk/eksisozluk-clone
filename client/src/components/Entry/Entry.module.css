@@ -1,6 +1,6 @@
 .entry {
     width:60%;
-    height: 100%;
+    height: auto;
     background-color: white;
     margin-left:255px;
     padding-left:10px;
@@ -25,7 +25,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border:1px solid red;
 }
 
 .nick {
@@ -41,7 +40,7 @@
 
 .nick .name {
     margin-left:10px;
-    color: #53a245;;
+    color: #53a245;
     font-size: 12px;
     font-weight: 600;
 }
@@ -49,6 +48,6 @@
 
 .icons {
     width: 50%;
-    background-color: grey;
+    background-color: black;
 
 }

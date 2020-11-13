@@ -1,12 +1,14 @@
 import React from "react"
 import styles from './Navbar.module.css'
 
-
 const Navbar = () => {
     return (
         <div className={styles.navbar}>
             
+           <div className={styles.trend}>
            <h2 className={styles.toptitle}>Gündem</h2>
+           <img className={styles.settingsicon} src='/settings.svg' alt=""/>
+           </div>
 
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
