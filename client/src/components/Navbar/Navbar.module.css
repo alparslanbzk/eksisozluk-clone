@@ -1,6 +1,62 @@
 .navbar {
     width: 20%;
     height: 84vh;
-    background-color: green;
+    background-color: white;
     position: fixed;
+    overflow-y:scroll;
+    /* scrollbar-color: auto transparent; */
+
 }
+
+.toptitle {
+    color:#888;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: -1px;
+    margin-top:25px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.titlecontent {
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-weight: 500;
+    font-size: 13px;
+    /* padding-right: 4px; */
+    letter-spacing: 0.5px;
+
+}
+
+
+.commentcount {
+    /* margin-bottom:20px; */
+    padding-right: 4px;
+    color: rgb(141, 141, 141);
+    font-weight: 400;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+
+
+.navbar::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  .navbar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .navbar::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }

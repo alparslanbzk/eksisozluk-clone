@@ -1,5 +1,54 @@
 .entry {
-    width:75%;
+    width:60%;
     height: 100%;
-    background-color: brown;
+    background-color: white;
+    margin-left:255px;
+    padding-left:10px;
+    padding-top:30px;
+}
+
+.entrytitle {
+    font-size:22px;
+    color:rgb(46, 46, 46);
+    font-weight: 700;
+}
+
+.entrybody {
+    font-size:14px;
+    color: rgb(46, 46, 46);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.bottomMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border:1px solid red;
+}
+
+.nick {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+}
+
+.nick .date {
+    color: #888;
+    font-size: 12px;
+}
+
+.nick .name {
+    margin-left:10px;
+    color: #53a245;;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+.icons {
+    width: 50%;
+    background-color: grey;
+
 }
