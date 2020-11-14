@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+const ObjectId = mongoose.Schema.ObjectId
 
 const postSchema = new mongoose.Schema({
     title:{
@@ -9,6 +9,10 @@ const postSchema = new mongoose.Schema({
     body:{
         type:String,
         required:true
+    },
+    postedBy:{
+        type:ObjectId,
+        ref:"User"
     }
 })
 

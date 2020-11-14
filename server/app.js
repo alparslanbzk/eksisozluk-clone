@@ -24,10 +24,11 @@ mongoose.connection.on("error",(err) => {
 app.use(express.json())
 
 app.use(require("./routes/auth"))
+app.use(require("./routes/post"))
 
 
 
 
 app.listen(PORT,() => {
-    console.log("server is running")
+    console.log("server is running",PORT)
 })
