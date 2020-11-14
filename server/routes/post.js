@@ -21,12 +21,21 @@ router.post('/create',requireLogin,(req,res) => {
         res.json({message:"post is succesfully created"})
     }).catch(err =>{
         console.log(err)
+    }).catch(err => {
+        console.log(err)
     })
 
     
 })
 
-
+router.get('/allpost',(req,res) => {
+    Post.find()
+    .then(posts=> {
+        res.json({posts:posts})
+    }).catch(err => {
+        console.log(err)
+    })
+})
 
 
 
