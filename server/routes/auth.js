@@ -7,8 +7,36 @@ router.get("/",(req,res) => {
     res.send("Home Page")
 })
 
-router.post('/signin',(req,res) => {
-    console.log(req.body)
+router.post('/signup',(req,res) => {
+    // console.log(req.body)
+    const {nick,email,password} = req.body
+    if(!nick || !email || !password){
+        return res.status(422).json({error:"teneke misin oğlum boş alanları doldur yoksa içeri almıyoruz"})
+    }
+    
+    User.findOne({email:email})
+    .then(existUser=> {
+        if(existUser){
+            return res.status(422).json({error:"geç kaldın emaili biri kapmış"})
+        }
+
+        const user = new User({
+            nick,
+            email,
+            password
+        })
+    
+        user.save()
+        .then(user  => {
+            res.json({user:user})
+            
+        }).catch(err => {
+            console.log(err)
+        })
+    }).catch(err => {
+        console.log(err)
+    })
+
 })
 
 
