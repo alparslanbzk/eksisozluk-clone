@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './Header.module.css'
+import {Link} from "react-router-dom"
 
 function Header() {
     return (
@@ -10,9 +11,9 @@ function Header() {
             <div className={styles.topheader}>
 
                 <div>
-                    <a href="/">
+                    <Link to="/">
                         <img className={styles.logo} src="/eksisozluk_logo.svg" alt="eksisozluk" />
-                    </a>
+                    </Link>
                 </div>
                 <div className={styles.searchform}>
                     <form action="">
@@ -24,8 +25,8 @@ function Header() {
                     </form>
                 </div>
                 <div className={styles.sign}>
-                    <a href="/signin">giriş</a>
-                    <a href="/signin">kayıt ol</a>
+                    <Link to="/signin">giriş</Link>
+                    <Link to="/signin">kayıt ol</Link>
                 </div>
 
             </div>
@@ -34,27 +35,27 @@ function Header() {
                 <div className={styles.category}>
                     <ul>
                         <li>
-                            <a>gündem</a>
+                            <Link to="/">gündem</Link>
                         </li>
                         <li>
-                            <a>debe</a>
+                            <Link to="/">debe</Link>
                         </li>
                         <li>
-                            <a>sorunsallar</a>
+                            <Link to="/">sorunsallar</Link>
                         </li>
                         <li>
-                            <a>spor</a>
+                            <Link to="/">spor</Link>
                         </li>
                         <li>
-                            <a>ilişkiler</a>
+                            <Link to="/">ilişkiler</Link>
                         </li>
                         <li>
-                            <a>siyaset</a>
+                            <Link to="/">siyaset</Link>
                         </li>
                         <li>
-                            <a className={styles.marginreset}>
+                            <Link to="/" className={styles.marginreset}>
                                 <img src="/ellipsis.svg" alt="dssd"/>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

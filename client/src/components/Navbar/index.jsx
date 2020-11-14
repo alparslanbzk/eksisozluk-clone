@@ -1,5 +1,6 @@
 import React from "react"
 import styles from './Navbar.module.css'
+import {Link} from "react-router-dom"
 
 const Navbar = () => {
     return (
@@ -10,108 +11,119 @@ const Navbar = () => {
            <img className={styles.settingsicon} src='/settings.svg' alt=""/>
            </div>
 
+           
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Efdal İNCESU işe girdi
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    124
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Priviada son olan olaylar. Privia ibne mi
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Efdal Hypea kapağı attı şimdi neler olacak
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
-
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    HAyırlı olsun 
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Türkiyede iyi şeylerde oluyor. Her şey güzel olacak
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
-
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Efdalın işe girmesi hakkında ne düşünüyorsunuz
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Sivas elllerinde bulamadım türküsü ne zaman açıldı
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Sivas elllerinde bulamadım türküsü ne zaman açıldı
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Sivas elllerinde bulamadım türküsü ne zaman açıldı
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
-
+            <Link>
             <div className={styles.title}>
                 <p className={styles.titlecontent}>
-                    Sivas elllerinde bulamadım türküsü ne zaman açıldı
+                    Türkiye Tarihinin en iyi oyunları sıralamasında kimin ne yaptığını nasıl anlıyacağız
                 </p>
                 <p className={styles.commentcount}>
-                    24
+                    56
                 </p>
             </div>
+            </Link>
 
 
-            <div className={styles.title}>
-                <p className={styles.titlecontent}>
-                    Sivas elllerinde bulamadım türküsü ne zaman açıldı
-                </p>
-                <p className={styles.commentcount}>
-                    24
-                </p>
-            </div>
+           
             
             
             
