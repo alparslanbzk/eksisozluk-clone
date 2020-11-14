@@ -68,13 +68,3 @@
     transform: rotateX(150deg);
 }
 
-.popup {
-    width: 100px;
-    height: 100px;
-    z-index: 99;
-    border:1px solid #53a245;
-    background-color: antiquewhite;
-    position: fixed;
-    top:50%;
-    left:50%;
-}

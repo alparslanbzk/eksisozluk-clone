@@ -139,6 +139,7 @@ li :hover {
 }
 
 li a{
+    text-decoration: none !important;
     margin-right:105px;
     font-size: 15px;
     font-weight: 600;
