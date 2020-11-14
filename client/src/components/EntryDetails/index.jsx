@@ -60,7 +60,7 @@ melih? yaşıyor musun? </p>
 
             <div className="comment">
                 <form className={styles.form} action="#">
-                    <textarea className={styles.textarea} name="" id="" style={{width:"586px",height:"156px",marginTop:"70px",fontSize:"14px",padding:"15px"}} placeholder="korona virüs hakında ne düşünüyorsunuz"></textarea>
+                    <textarea className={styles.textarea} name="" id="" style={{width:"586px",height:"100px",marginTop:"70px",fontSize:"14px",padding:"15px"}} placeholder="korona virüs hakında ne düşünüyorsunuz"></textarea>
                     <button className={styles.button}>Yolla</button>
                 </form>
             </div>

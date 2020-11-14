@@ -1,0 +1,56 @@
+.create {
+    width:60%;
+    height: auto;
+    background-color: white;
+    margin-left:255px;
+    padding-left:20px;
+    padding-top:30px;
+    padding-bottom:25px;
+}
+
+.form {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    border:1px solid rgb(181, 181, 181);
+    border-radius: 5px;
+}
+
+.textarea::placeholder {
+    color: rgb(84, 84, 84);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.button {
+    margin-top: 15px;
+    width: 110px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #53a245;
+    background-color: #81C14B;
+    color: #fff;
+}
+
+.select {
+    margin-top: 15px;
+    width: 110px;
+    height: 35px;
+}
+
+.input {
+    padding-left:15px;
+    margin-bottom: 15px;
+    border:1px solid rgb(181, 181, 181);
+    border-radius: 5px;
+    width: 598px;
+    height: 30px;
+}
+
+
+.input::placeholder {
+    color: rgb(84, 84, 84);
+}
