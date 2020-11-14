@@ -3,10 +3,11 @@ const router = express.Router()
 const User = require('../models/user')
 const bcyrpt = require('bcryptjs')
 const jwt = require("jsonwebtoken")
+const requireLogin = require('../middleware/requireLogin')
 
-router.get("/",(req,res) => {
-    res.send("Home Page")
-})
+// router.get("/protected",requireLogin,(req,res) => {
+//     res.json({user:req.user})
+// })
 
 router.post('/signup',(req,res) => {
     // console.log(req.body)
@@ -64,7 +65,7 @@ router.post('/signin',(req,res) => {
                 return res.status(422).json({error:"şifre veya email yanlış hangisi söylemem"})
             }
 
-            const token = jwt.sign({id:user._id},process.env.JWT_SECRET)
+            const token = jwt.sign({_id:user._id},process.env.JWT_SECRET)
 
             res.json({token:token,user:user})
         })
