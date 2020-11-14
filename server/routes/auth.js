@@ -50,6 +50,26 @@ router.post('/signin',(req,res) => {
     
     const {email,password} = req.body
 
+    if(!email || !password) {
+        return res.status(422).json({error:"teneke misin oğlum boş alanları doldur yoksa içeri almıyoruz"})
+    }
+
+    User.findOne({email:email})
+    .then(user => {
+
+        bcyrpt.compare(password,user.password)
+        .then(doMatch => {
+            if(!doMatch) {
+                return res.status(422).json({error:"şifre veya email yanlış hangisi söylemem"})
+            }
+
+            res.json({data:"sen osun"})
+        })
+
+    }).catch(err => {
+        console.log(err)
+    })
+
     
 
 })
