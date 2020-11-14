@@ -23,9 +23,10 @@ mongoose.connection.on("error",(err) => {
 
 
 
-app.get("/",(req,res) => {
-    res.send("Home Page")
-})
+app.use(require("./routes/auth"))
+
+
+
 
 app.listen(PORT,() => {
     console.log("server is running")
