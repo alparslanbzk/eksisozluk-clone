@@ -2,12 +2,12 @@ const mongoose = require("mongoose")
 
 
 const userSchema = new mongoose.Schema({
-    name:{
+    nick:{
         type:String,
         required:true
     },
     email:{
-        name:type,
+        type:String,
         required:true
     },
     password:{

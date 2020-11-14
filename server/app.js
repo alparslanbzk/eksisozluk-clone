@@ -21,7 +21,7 @@ mongoose.connection.on("error",(err) => {
     console.log("mongoose is crushed", err)
 })
 
-
+app.use(express.json())
 
 app.use(require("./routes/auth"))
 
