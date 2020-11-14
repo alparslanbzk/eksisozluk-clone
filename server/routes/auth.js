@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const User = require('../models/user')
 const bcyrpt = require('bcryptjs')
+const jwt = require("jsonwebtoken")
 
 router.get("/",(req,res) => {
     res.send("Home Page")
@@ -63,7 +64,9 @@ router.post('/signin',(req,res) => {
                 return res.status(422).json({error:"şifre veya email yanlış hangisi söylemem"})
             }
 
-            res.json({data:"sen osun"})
+            const token = jwt.sign({id:user._id},process.env.JWT_SECRET)
+
+            res.json({token:token,user:user})
         })
 
     }).catch(err => {
