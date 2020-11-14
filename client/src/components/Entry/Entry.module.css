@@ -9,9 +9,14 @@
 }
 
 .entrytitle {
+
     font-size:22px;
     color:rgb(46, 46, 46);
     font-weight: 700;
+}
+
+.entrytitle:hover {
+    text-decoration: underline;
 }
 
 .entrybody {
@@ -53,16 +58,12 @@
     width: 25%;
     /* border: 1px solid red; */
 }
-
-
 .icons img{
     width: 12px;
     cursor: pointer;
     
 
 }
-
-
 
 .rotatearrow {
     transform: rotateX(150deg);
