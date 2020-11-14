@@ -7,7 +7,7 @@ const Entry = () => {
         <div className={styles.entry}>
             
 
-
+            <div className={styles.popup}>Dneme</div>
 
             <div>
             <a className={styles.entrytitle} href="#">sağlık bakanlığı'nın ankara suyu raporu</a>

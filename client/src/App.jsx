@@ -1,18 +1,16 @@
 import React from "react"
 import "./App.css"
-import Header from "./components/Header/"
-import Navbar from "./components/Navbar/"
-import Content from "./components/Content/"
+import {BrowserRouter,Route} from "react-router-dom"
+import Home from "./screens/Home"
+import Signin from "./screens/Signin"
 
 const App = () => {
     return (
         <div className="app">
-            <Header />
-            <div className="container">
-                <Navbar />
-                <Content />
-
-            </div>
+           <BrowserRouter>
+                <Route exact path="/" component={Home}/>
+                <Route path="/signin" component={Signin}/>
+           </BrowserRouter>
 
 
         </div>
