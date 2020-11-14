@@ -30,37 +30,6 @@ a {
 }
 
 
-/* This works by applying style to all scroll bars in window
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* This does not apply the scrollbar to anything */
-/* div ::-webkit-scrollbar {
-    width: 12px;
-} */ 
-
-
-/* html:not([data-scroll='0']) {
-  padding-top: 3em;
-}
-html:not([data-scroll='0']) header {
-  position: fixed;
-} */
-
-#myDivId::-webkit-scrollbar {
-    width: 12px;
-}
-
-#myDivId::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
-}
-
-#myDivId::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
 
 
 
@@ -81,51 +50,3 @@ html:not([data-scroll='0']) header {
 
 
 
-
-
-/* 
-header {
-    height: 100px;
-    padding-top:7px;
-    border-top:4px solid #81C14B;
-    background-color: black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    top:0;
-    left:0;
-    z-index:9999
-}
-
-.header-form {
-    width: 45%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.logo a {
-    margin-left:20px;
-    font-size:20px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color:black;
-}
-
-.logo span {
-    color: #81C14B;
-
-}
-
-
-
-.container {
-    width: 90%;
-    height: 1000px;
-    margin:0 auto;
-    background-color: red;
-} */

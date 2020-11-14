@@ -30,8 +30,8 @@ function Header() {
 
             </div>
 
-            <div className="bottomheader">
-                <div className="category">
+            <div className={styles.bottomheader}>
+                <div className={styles.category}>
                     <ul>
                         <li>
                             <a>gündem</a>
@@ -51,10 +51,17 @@ function Header() {
                         <li>
                             <a>siyaset</a>
                         </li>
+                        <li>
+                            <a className={styles.marginreset}>
+                                <img src="/ellipsis.svg" alt="dssd"/>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div className="other">
-
+                <div className={styles.other}>
+                    <img src="/pena@2x.png"alt="pena"/>
+                    <img className={styles.eksiseyler} src="/eksiseyler@2x.png" alt="eksiseyler"/>
+                    
                 </div>
             </div>
 
