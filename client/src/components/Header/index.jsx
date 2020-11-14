@@ -19,7 +19,7 @@ function Header() {
                     <form action="">
                         <input type="text" placeholder="başlık, #entry, @yazar" />
                         <img className={styles.arrowicon} src="./down-arrow.svg" alt="settings" />
-                        <button>
+                        <button className={styles.button}>
                             <img className={styles.searchsvg} src="/search.svg" alt="" />
                         </button>
                     </form>
