@@ -17,7 +17,7 @@ const Signup = () => {
                 <p>password</p>
                 <input className={styles.input} type="password"/>
 
-                <button className={styles.button}>giriş yapmaya çabala</button>
+                <button className={styles.button}>kayıt olmaya çabala</button>
             </form>
             <p className={styles.sigintitle}>zaten varış</p>
             <Link className={styles.siginlink}>giriş yapılası</Link>

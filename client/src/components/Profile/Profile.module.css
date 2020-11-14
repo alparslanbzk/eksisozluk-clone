@@ -1,0 +1,132 @@
+.profile {
+    margin-left:255px;
+    padding-left:20px;
+    padding-top:30px;
+    padding-bottom:25px;
+    width: 75%;
+}
+
+.title {
+    padding-bottom:10px !important; 
+    font-size:21px !important;
+    color:rgb(38, 38, 38) !important;
+    font-weight: 700 !important; 
+}
+
+.menu {
+
+    margin-bottom: 15px;
+}
+
+.menu a {
+    color: #888;
+    margin-right:11px;
+    font-size:12px;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    text-decoration-color: #888;
+}
+
+.header {
+    justify-content: flex-start;
+    line-height: 30px;
+    height: 30px;
+    width: 70%;
+    border-top:1px solid #888;
+    border-bottom:1px solid #888;
+    margin-top:78px;
+    padding-top:10;
+    margin-bottom:10px;
+}
+
+.headeralt {
+    color: rgb(14, 14, 14);
+    margin-right:13px;
+    font-size:13px;
+    font-weight: 400;
+}
+
+.headeralt:hover {
+    color: rgb(14, 14, 14);
+    margin-right:15px;
+    font-size:13px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #53a245;
+}
+
+.titlebottom{
+    margin:0;
+    padding:0;
+    margin-top:50px !important;
+    font-size:21px !important;
+    color:#53a245 !important;
+    font-weight: 700 !important; 
+}
+
+a:hover  {
+    text-decoration: underline !important;
+    text-decoration-color: #53a245;
+}
+
+.entrytitle {
+    font-size:22px;
+    color:rgb(46, 46, 46);
+    font-weight: 700;
+}
+
+.entrybody {
+    font-size:14px;
+    color: rgb(46, 46, 46);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.bottomMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nick {
+    display: flex;
+    flex-direction: row;
+    margin-right: 15px;
+}
+
+.nick .date {
+    color: #888;
+    font-size: 12px;
+}
+
+.nick .name {
+    margin-left:10px;
+    color: #53a245;
+    font-size: 12px;
+    font-weight: 600;
+}
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    /* border: 1px solid red; */
+}
+
+
+.icons img{
+    width: 12px;
+    cursor: pointer;
+    
+
+}
+
+
+
+.rotatearrow {
+    transform: rotateX(150deg);
+}

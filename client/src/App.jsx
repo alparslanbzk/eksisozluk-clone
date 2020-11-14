@@ -4,6 +4,7 @@ import {BrowserRouter,Route} from "react-router-dom"
 import Home from "./pages/Home"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
+import Profile from "./pages/Profile"
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
                 <Route exact path="/" component={Home}/>
                 <Route path="/signin" component={Signin}/>
                 <Route path="/signup" component={Signup}/>
+                <Route path="/profile" component={Profile}/>
            </BrowserRouter>
 
 
