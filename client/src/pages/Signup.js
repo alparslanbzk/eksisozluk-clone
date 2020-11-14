@@ -2,8 +2,7 @@ import React from "react"
 import Header from "../components/Header"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
-import Login from "../components/Signin"
-
+import Register from "../components/Signup"
 
 
 const Signin = () => {
@@ -14,7 +13,7 @@ const Signin = () => {
             <div className="container">
                 <Navbar />
                 <div >
-                    <Login />
+                    <Register />
                 <Footer />
                 </div>
                 

@@ -26,7 +26,7 @@ function Header() {
                 </div>
                 <div className={styles.sign}>
                     <Link to="/signin">giriş</Link>
-                    <Link to="/signin">kayıt ol</Link>
+                    <Link to="/signup">kayıt ol</Link>
                 </div>
 
             </div>
