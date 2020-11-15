@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 
 const Signin = () => {
     return (
-        <div class={styles.signin}>
+        <div className={styles.signin}>
 
             <p className={styles.sigintitle}>giriş</p>
             <form className={styles.form}>
@@ -17,8 +17,8 @@ const Signin = () => {
                 <button className={styles.button}>giriş yapmaya çabala</button>
             </form>
             <p className={styles.sigintitle}>giremeyiş</p>
-            <Link className={styles.siginlink}>şifre mi unuttum</Link>
-            <Link className={styles.siginlink}>kayıtlı kullanıcı olunası</Link>
+            <Link to="/" className={styles.siginlink}>şifre mi unuttum</Link>
+            <Link to="/" className={styles.siginlink}>kayıtlı kullanıcı olunası</Link>
         
         </div>
     )
