@@ -38,5 +38,16 @@ router.get('/allpost',(req,res) => {
 })
 
 
+router.get('/mypost',requireLogin,(req,res) => {
+    const {_id} = req.user
+    
+    Post.find({postedBy:_id})
+    .then(post => {
+        res.json({post:post})
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
 
 module.exports = router
