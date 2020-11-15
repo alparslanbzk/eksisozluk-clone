@@ -1,10 +1,10 @@
 import React,{useState,useEffect} from "react"
 import styles from "./Signin.module.css"
-import {Link} from "react-router-dom"
+import {Link,useHistory} from "react-router-dom"
 import axios from "axios"
 
 const Signin = () => {
-
+    const History = useHistory()
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
 
@@ -22,6 +22,9 @@ const Signin = () => {
         })
         .then(response => {
             console.log(response.data.token)
+            localStorage.getItem("jwt",response.data.token)
+            localStorage.getItem("user",response.data.user)
+            History.push("/")
         })
         .catch(err => {
             console.log(err)
