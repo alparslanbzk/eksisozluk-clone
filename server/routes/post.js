@@ -31,6 +31,7 @@ router.post('/create',requireLogin,(req,res) => {
 
 router.get('/allpost',(req,res) => {
     Post.find()
+    .populate("postedBy","_id nick")
     .then(posts=> {
         res.json({posts:posts})
     }).catch(err => {
