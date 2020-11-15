@@ -4,6 +4,7 @@ const Post = require('../models/post')
 const requireLogin = require('../middleware/requireLogin')
 
 router.post('/create',requireLogin,(req,res) => {
+    
     const {title,body} = req.body
 
     if(!title || !body) {
