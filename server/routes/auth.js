@@ -60,7 +60,7 @@ router.post('/signin',(req,res) => {
     User.findOne({email:email})
     .then(user => {
 
-        bcyrpt.compare(password,user.password)
+        bcrypt.compare(password,user.password)
         .then(doMatch => {
             if(!doMatch) {
                 return res.status(422).json({error:"şifre veya email yanlış hangisi söylemem"})
