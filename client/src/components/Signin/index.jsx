@@ -21,9 +21,9 @@ const Signin = () => {
             password
         })
         .then(response => {
-            console.log(response.data.token)
-            localStorage.getItem("jwt",response.data.token)
-            localStorage.getItem("user",response.data.user)
+            console.log(response.data.user)
+            localStorage.setItem("jwt",response.data.token)
+            localStorage.setItem("user",JSON.stringify(response.data.user))
             History.push("/")
         })
         .catch(err => {

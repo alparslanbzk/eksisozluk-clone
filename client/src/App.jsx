@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useContext} from "react"
 import "./App.css"
 import {BrowserRouter,Route} from "react-router-dom"
 import Home from "./pages/Home"
@@ -7,6 +7,10 @@ import Signup from "./pages/Signup"
 import Profile from "./pages/Profile"
 import Details from "./pages/Details"
 import Create from "./pages/Create"
+
+
+
+
 
 const App = () => {
     return (
