@@ -40,15 +40,20 @@ router.get('/allpost',(req,res) => {
 })
 
 
+
+
 router.get('/post/:postId',(req,res) => {
+
+    const {postId} = req.params
     
-    Post.findById(req.params.postId)
+    Post.findById(postId)
     .then(response => {
         res.json({post:response})
     }).catch(err => {
         console.log(res)
     })
 })
+
 
 
 router.get('/mypost',requireLogin,(req,res) => {
@@ -97,6 +102,8 @@ router.put('/unlike',requireLogin,(req,res) => {
     })
     
 })
+
+
 
 
 module.exports = router
