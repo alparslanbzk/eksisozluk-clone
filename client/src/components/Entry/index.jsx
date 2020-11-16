@@ -34,6 +34,20 @@ const Entry = () => {
         
     }
 
+
+
+    const unlikePost = (id) => {
+        axios.put('/unlike',{
+            postId:id
+        },{
+            headers:{
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            }
+        }).then(result => {
+            console.log(result)
+        })
+    }
+
     return (
         <div className={styles.entry}>
             
@@ -55,7 +69,7 @@ const Entry = () => {
                 }}
                 />
                 <img  src="/arrow.svg" alt="facebook" onClick={() => {
-                    console.log("aşağı çalışıyor")
+                    unlikePost(items._id)
                 }}/>
                 </div>
                 <div className={styles.nick}>
