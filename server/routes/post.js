@@ -40,6 +40,17 @@ router.get('/allpost',(req,res) => {
 })
 
 
+router.get('/post/:postId',(req,res) => {
+    
+    Post.findById(req.params.postId)
+    .then(response => {
+        res.json({post:response})
+    }).catch(err => {
+        console.log(res)
+    })
+})
+
+
 router.get('/mypost',requireLogin,(req,res) => {
     const {_id} = req.user
     

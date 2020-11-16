@@ -26,6 +26,8 @@ mongoose.connection.on("error",(err) => {
 app.use(cors())
 app.use(express.json())
 
+
+app.use(require("./routes/comment"))
 app.use(require("./routes/auth"))
 app.use(require("./routes/post"))
 
