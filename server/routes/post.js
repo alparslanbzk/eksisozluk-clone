@@ -54,8 +54,9 @@ router.get('/mypost',requireLogin,(req,res) => {
 
 router.put('/like',requireLogin,(req,res) => {
     //postid,user ->like
+    // console.log(req.user._id)
 
-    Post.findByIdAndUpdate({_id:req.body.post._id},{
+    Post.findByIdAndUpdate({_id:req.body.postId},{
         $push: {likes:req.user._id}
     },{
         new:true
@@ -72,7 +73,7 @@ router.put('/like',requireLogin,(req,res) => {
 router.put('/unlike',requireLogin,(req,res) => {
     //postid,user ->like
 
-    Post.findByIdAndUpdate({_id:req.body.post._id},{
+    Post.findByIdAndUpdate({_id:req.body.postId},{
         $pull: {likes:req.user._id}
     },{
         new:true
