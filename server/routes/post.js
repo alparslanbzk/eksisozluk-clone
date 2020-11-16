@@ -47,6 +47,7 @@ router.get('/post/:postId',(req,res) => {
     const {postId} = req.params
     
     Post.findById(postId)
+    .populate("postedBy","_id nick")
     .then(response => {
         res.json({post:response})
     }).catch(err => {

@@ -49,7 +49,7 @@ const EntryDetails = () =>  {
                 </div>
                 <div className={styles.nick}>
                     <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> {post?post.postedBy:"loading"}</Link>
+                    <Link  to="/"  className={styles.name}> {post?post.postedBy.nick:"loading"}</Link>
                 </div>
                 </div>
             </div>
