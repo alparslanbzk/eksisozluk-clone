@@ -18,6 +18,7 @@ function Header() {
                 <>
                     
                     <Link to="/profile">profil</Link>
+                    <Link to="/create">entry gir</Link>
                     <Link to="/signup" onClick={() => {
                         localStorage.clear("jwt")
                         localStorage.clear("user")

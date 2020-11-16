@@ -29,7 +29,16 @@ router.post('/makecomment',requireLogin,(req,res) => {
 
 })
 
-
+router.get('/comments/:postId',requireLogin,(req,res) => {
+    const {postId} = req.params
+    
+    Comment.find({postId:postId})
+    .then(results => {
+        res.json({comments:results})
+    }).catch(err => {
+        console.log(err)
+    })
+})
 
 
 module.exports= router

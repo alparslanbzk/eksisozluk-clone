@@ -11,6 +11,7 @@ import axios from "axios"
 const EntryDetails = () =>  {
 
     const [post,setPost] = useState({})
+    const [comments,setComments] =useState([])
 
     const [body,setBody] = useState("")
 
@@ -26,9 +27,25 @@ const EntryDetails = () =>  {
             setPost(results.data.post)
             //  console.log(post)
         })
+
+        
     }, [])
 
+    const makeComment = () => {
+        console.log(post._id)
+        console.log(body)
 
+        axios.post('/makecomment',{
+            body,
+            postId:post._id
+        },{
+            headers:{
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            }
+        }).then(result=> {
+            console.log(result)
+        })
+    }
     
 
 
@@ -82,7 +99,7 @@ const EntryDetails = () =>  {
             <div className="comment">
                 <form className={styles.form} action="#" onSubmit={(e) => {
                     e.preventDefault()
-                    
+                    makeComment()
                 }}>
                     <textarea 
                     className={styles.textarea} name="" id="" 
