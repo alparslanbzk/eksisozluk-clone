@@ -1,6 +1,7 @@
-import React,{useEffect,useParams} from "react"
+import React,{useEffect,useState} from "react"
 import styles from "./EntryDetails.module.css"
-import {NavLink,Link} from "react-router-dom"
+import {NavLink,Link,useParams} from "react-router-dom"
+import axios from "axios"
 
 
 //params:postId
@@ -9,14 +10,25 @@ import {NavLink,Link} from "react-router-dom"
 
 const EntryDetails = () =>  {
 
-    // const postId=
+    const [post,setPost] = useState({})
 
+    const {_id}= useParams()
+    // console.log("çalışıyor entrydetails")
     
+
+    useEffect(() => {
+        console.log(_id)
+        axios.get(`/post/${_id}`)
+        .then(results => {
+            console.log(results.data.post)
+            setPost(results.data.post)
+        })
+    }, [])
 
 
     return (
         <div className={styles.details}>
-            <p className={styles.title}>hintlikaraemre</p>
+            <p className={styles.title}>{post?post.title:"loading"}</p>
             <div className={styles.header}>
             <NavLink to="/" className={styles.headeralt}>şükela:  tümü | bugün</NavLink>
             <NavLink to="/" className={styles.headeralt}> başlıkta ara</NavLink>
@@ -25,10 +37,7 @@ const EntryDetails = () =>  {
 
 
             <div style={{marginTop:"40px"}}>
-            <p className={styles.entrybody}>diyor ki;
-            "demir, nitrat, aluminyum, arsenik, perfringens, enterokok, eschericis coli ve koliform bakteri parametreleri yönünden insani tüketim amaçlı sular hakkında yönetmelikte belirtilen sınır değerlere göre uygunsuz ve serbest klor düzeyinin yetersiz olduğu saptanmıştır."
-            görüldüğü üzere içinde bir biz yokuz.
-melih? yaşıyor musun? </p>
+            <p className={styles.entrybody}>{post?post.body:"loading"} </p>
 
 
                 <div className={styles.bottomMenu}>
@@ -40,7 +49,7 @@ melih? yaşıyor musun? </p>
                 </div>
                 <div className={styles.nick}>
                     <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> sanikmagdur</Link>
+                    <Link  to="/"  className={styles.name}> {post?post.postedBy:"loading"}</Link>
                 </div>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const Navbar = () => {
             .then(result => {
                 // console.log(result.data.posts)
                 setData(result.data.posts)
-                console.log(data)
+                // console.log(data)
                 // console.log(result.data.posts)
             })
     }, [])

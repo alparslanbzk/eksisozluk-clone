@@ -29,7 +29,7 @@ const Routing = ()=>{
     return(
       <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/details/:id" component={Details} />
+            <Route exact path="/details/:_id" component={Details} />
             <Route exact path="/signin" component={Signin} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
