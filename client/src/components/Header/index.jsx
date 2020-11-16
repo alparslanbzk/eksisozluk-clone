@@ -1,6 +1,6 @@
 import React ,{useContext} from 'react'
 import styles from './Header.module.css'
-import {Link} from "react-router-dom"
+import {Link,useHistory} from "react-router-dom"
 import { UserContext } from '../../App'
 
 function Header() {
@@ -8,6 +8,7 @@ function Header() {
     const {state,dispatch} = useContext(UserContext)
 
     // console.log(state)
+    const history = useHistory()
 
 
 
@@ -17,7 +18,12 @@ function Header() {
                 <>
                     
                     <Link to="/profile">profil</Link>
-                    <Link to="/signup">çıkış</Link>
+                    <Link to="/signup" onClick={() => {
+                        localStorage.clear("jwt")
+                        localStorage.clear("user")
+                        dispatch({type:"CLEAR"})
+                        history.push('/signin')
+                    }}>çıkış</Link>
                 </>
         )
         }else {
