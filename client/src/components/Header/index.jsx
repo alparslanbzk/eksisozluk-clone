@@ -1,8 +1,38 @@
-import React from 'react'
+import React ,{useContext} from 'react'
 import styles from './Header.module.css'
 import {Link} from "react-router-dom"
+import { UserContext } from '../../App'
 
 function Header() {
+
+    const {state,dispatch} = useContext(UserContext)
+
+    // console.log(state)
+
+
+
+    const RenderList = () => {
+        if(state) {
+            return (
+                <>
+                    
+                    <Link to="/profile">profil</Link>
+                    <Link to="/signup">çıkış</Link>
+                </>
+        )
+        }else {
+            return (
+                <>
+                    
+                    <Link to="/signin">giriş</Link>
+                    <Link to="/signup">kayıt ol</Link>
+                </>
+        )
+        }
+        
+    }
+
+
     return (
 
         <div className={styles.header}>
@@ -25,9 +55,9 @@ function Header() {
                     </form>
                 </div>
                 <div className={styles.sign}>
-                    <Link to="/signin">giriş</Link>
-                    <Link to="/signup">kayıt ol</Link>
+                <RenderList />
                 </div>
+                
 
             </div>
 

@@ -23,7 +23,7 @@ const Entry = () => {
                 return  (
                     <div key={items._id}>
             <Link to="/" className={styles.entrytitle} href="#">{items.title}</Link>
-            <p className={styles.entrybody}>d{items.body}</p>
+            <p className={styles.entrybody}>{items.body}</p>
 
 
                 <div className={styles.bottomMenu}>
