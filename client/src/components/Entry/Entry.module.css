@@ -69,3 +69,10 @@
     transform: rotateX(150deg);
 }
 
+.likeslength {
+    color: #81C14B;
+    margin-right:5px;
+    font-size:12px;
+    font-weight: 600;
+}
+
