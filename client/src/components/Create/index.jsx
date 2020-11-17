@@ -1,8 +1,11 @@
 import React ,{useState} from "react"
 import styles from "./Create.module.css"
 import axios from "axios"
+import {useHistory} from "react-router-dom"
 
 const Create = () => {
+    const History = useHistory()
+
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
 
@@ -17,7 +20,7 @@ const Create = () => {
             }
           })
           .then(response => {
-              console.log(response.data.message)
+                History.push('/')
           }).catch(err=> {
               console.log(err)
           }

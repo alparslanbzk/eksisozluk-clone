@@ -56,6 +56,7 @@ const EntryDetails = () =>  {
                 }
             })
             setComments(newComments)
+            setBody("")
         })
     }
 
