@@ -1,12 +1,11 @@
 import React,{useContext,useEffect,useState} from "react"
 import styles from "./User.module.css"
-import {NavLink,Link} from "react-router-dom"
+import {NavLink,Link,useParams} from "react-router-dom"
 import {UserContext} from "../../App"
 import axios from "axios"
 
 const User = () => {
-
-    const {state,dispatch} = useContext(UserContext)
+    const {userId} = useParams()
 
     const [data,setData] = useState()
     // console.log("user çalışıyor")
@@ -14,7 +13,7 @@ const User = () => {
 
     useEffect(() => {
         // console.log("çalışıyor")
-        axios.get('/user/5fb28f45b0d6874b3ebcb518')
+        axios.get(`/user/${userId}`)
         .then(results => {
             // console.log("bu o", results.data.posts)
             setData(results.data.posts)
