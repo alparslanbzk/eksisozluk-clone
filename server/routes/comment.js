@@ -2,6 +2,7 @@ const express = require("express")
 const requireLogin = require("../middleware/requireLogin")
 const router = express.Router()
 const Comment = require("../models/comment")
+const Post = require("../models/post")
 
 
 
@@ -20,21 +21,32 @@ router.post('/makecomment',requireLogin,(req,res) => {
         postId,
         postedBy:req.user._id
     })
-
     comment.save()
     .then(result=> {
-        res.json({comment:result})
+
+        Post.findByIdAndUpdate({_id:postId},{
+            $push: {comments:result._id}
+        },{
+            new:true
+        }).exec((err,result) => {
+            if(err) {
+                return res.status(422).json({error:err})
+            }else {
+                res.json({comment:result})
+            }
+        })
+        
     })
-
-
 })
 
-router.get('/comments/:postId',requireLogin,(req,res) => {
+router.get('/comments/:postId',(req,res) => {
+    
     const {postId} = req.params
+    console.log("burası orası",postId)
     
     Comment.find({postId:postId})
     .then(results => {
-        res.json({comments:results})
+        res.json({results})
     }).catch(err => {
         console.log(err)
     })

@@ -17,7 +17,7 @@ const EntryDetails = () =>  {
 
     const {_id}= useParams()
     // console.log("çalışıyor entrydetails")
-    
+
 
     useEffect(() => {
         // console.log(_id)
@@ -28,12 +28,17 @@ const EntryDetails = () =>  {
             //  console.log(post)
         })
 
-        
-    }, [])
+        axios.get(`/comments/${_id}`)
+        .then(results => {
+            setComments(results.data.results)
+        }).catch(err => {
+            console.log(err)
+        })
+    }, [comments])
 
     const makeComment = () => {
-        console.log(post._id)
-        console.log(body)
+        // console.log(post._id)
+        // console.log(body)
 
         axios.post('/makecomment',{
             body,
@@ -43,10 +48,17 @@ const EntryDetails = () =>  {
                 "Authorization":"Bearer "+localStorage.getItem("jwt")
             }
         }).then(result=> {
-            console.log(result)
+            const newComments = comments.map(items => {
+                if(items._id==result._id){
+                    return result
+                }else {
+                    return items
+                }
+            })
+            setComments(newComments)
         })
     }
-    
+
 
 
     return (
@@ -77,9 +89,12 @@ const EntryDetails = () =>  {
                 </div>
             </div>
 
-
-            <div style={{marginTop:"40px"}}>
-            <p className={styles.entrybody}>{post?post.body:"loading"} </p>
+        
+            {
+                comments.map(item=> {
+                    return (
+                        <div style={{marginTop:"40px"}}>
+            <p className={styles.entrybody}>{item?item.body:"loading"} </p>
 
 
                 <div className={styles.bottomMenu}>
@@ -91,19 +106,25 @@ const EntryDetails = () =>  {
                 </div>
                 <div className={styles.nick}>
                     <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> </Link>
+                    <Link  to="/"  className={styles.name}> {item.nick}</Link>
                 </div>
                 </div>
             </div>
+                    )
+                })
+            }
+
+
+            
 
             <div className="comment">
                 <form className={styles.form} action="#" onSubmit={(e) => {
                     e.preventDefault()
                     makeComment()
                 }}>
-                    <textarea 
-                    className={styles.textarea} name="" id="" 
-                    style={{width:"586px",height:"100px",marginTop:"70px",fontSize:"14px",padding:"15px"}} 
+                    <textarea
+                    className={styles.textarea} name="" id=""
+                    style={{width:"586px",height:"100px",marginTop:"70px",fontSize:"14px",padding:"15px"}}
                     placeholder="korona virüs hakında ne düşünüyorsunuz"
                     value={body}
                     onChange={(e)=> {
@@ -113,6 +134,11 @@ const EntryDetails = () =>  {
                     <button className={styles.button}>Yolla</button>
                 </form>
             </div>
+
+
+
+            
+            
 
 
 

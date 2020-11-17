@@ -79,7 +79,7 @@ const Entry = () => {
             {data.map(items => {
                 return (
                     <div key={items._id}>
-                        <Link to="/" className={styles.entrytitle} href="#">{items.title}</Link>
+                        <Link to={`/details/${items._id}`} className={styles.entrytitle} href="#">{items.title}</Link>
                         <p className={styles.entrybody}>{items.body}</p>
 
 
@@ -99,7 +99,7 @@ const Entry = () => {
                             </div>
                             <div className={styles.nick}>
                                 <Link to="/" className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                                <Link to="/profile" className={styles.name}> {items.postedBy.nick}</Link>
+                                <Link to="/" className={styles.name}> {items.postedBy.nick}</Link>
                             </div>
                         </div>
                     </div>

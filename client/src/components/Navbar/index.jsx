@@ -11,7 +11,7 @@ const Navbar = () => {
     useEffect(() => {
         axios.get('/allpost')
             .then(result => {
-                // console.log(result.data.posts)
+                console.log(result.data.posts)
                 setData(result.data.posts)
                 // console.log(data)
                 // console.log(result.data.posts)
@@ -35,7 +35,7 @@ const Navbar = () => {
                                 {data?item.title:"loading"}
                 </p>
                             <p className={styles.commentcount}>
-                                56
+                                {data?item.comments.length:"loading"}
                 </p>
                         </div>
                     </Link>
