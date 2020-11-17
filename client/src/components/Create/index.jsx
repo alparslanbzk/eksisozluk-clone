@@ -1,15 +1,16 @@
-import React ,{useState} from "react"
+import React ,{useState,useRef} from "react"
 import styles from "./Create.module.css"
 import axios from "axios"
 import {useHistory} from "react-router-dom"
 
 const Create = () => {
     const History = useHistory()
-
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
 
+   
     const createPost = (e) => {
+        
         e.preventDefault()
         axios.post("/create", {
             title,
@@ -55,12 +56,15 @@ const Create = () => {
 
 
                     <button className={styles.button}>Yolla</button>
-                    {/* <select className={styles.select} id="cars">
+                    <select  className={styles.select} id="cars" onChange={(e) => {
+                        console.log(e.target.value)
+                    }}>
                         <option value="volvo">Volvo</option>
                         <option value="saab">Saab</option>
                         <option value="vw">VW</option>
                         <option value="audi" selected>Audi</option>
-                    </select> */}
+                    </select>
+                   
                 </form>
             </div>
         </div>
