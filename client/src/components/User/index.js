@@ -4,7 +4,7 @@ import {NavLink,Link} from "react-router-dom"
 import {UserContext} from "../../App"
 import axios from "axios"
 
-const Profile = () => {
+const User = () => {
 
     const {state,dispatch} = useContext(UserContext)
 
@@ -92,4 +92,4 @@ const Profile = () => {
 }
 
 
-export default Profile
+export default User

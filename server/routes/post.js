@@ -55,6 +55,21 @@ router.get('/post/:postId',(req,res) => {
     })
 })
 
+router.get('/user/:userId',(req,res) => {
+    //userId
+    //postfind
+    //populate User
+    const {userId} = req.params;
+    
+    Post.find({postedBy:userId})
+    .then(posts => {
+        res.json({posts})
+    }).catch(err => {
+        console.log(err)
+    })
+
+})
+
 
 
 router.get('/mypost',requireLogin,(req,res) => {
