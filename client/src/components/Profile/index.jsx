@@ -60,7 +60,7 @@ const Profile = () => {
 
             {data && data.map(items => {
                 return (
-                    <div style={{width:"75%" , marginTop:"30px"}}>
+                    <div key={items._id} style={{width:"75%" , marginTop:"30px"}}>
                     <Link to="/" className={styles.entrytitle} href="#">{items.title}</Link>
                     <p className={styles.entrybody}>{items.body}</p>
         

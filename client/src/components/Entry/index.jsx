@@ -99,7 +99,7 @@ const Entry = () => {
                             </div>
                             <div className={styles.nick}>
                                 <Link to="/" className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                                <Link to="/" className={styles.name}> {items.postedBy.nick}</Link>
+                                <Link to={`/user/${items.postedBy._id}`} className={styles.name}> {items.postedBy.nick}</Link>
                             </div>
                         </div>
                     </div>

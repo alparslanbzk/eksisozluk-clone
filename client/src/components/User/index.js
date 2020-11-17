@@ -1,5 +1,5 @@
 import React,{useContext,useEffect,useState} from "react"
-import styles from "./Profile.module.css"
+import styles from "./User.module.css"
 import {NavLink,Link} from "react-router-dom"
 import {UserContext} from "../../App"
 import axios from "axios"
@@ -9,16 +9,15 @@ const User = () => {
     const {state,dispatch} = useContext(UserContext)
 
     const [data,setData] = useState()
+    // console.log("user çalışıyor")
 
 
     useEffect(() => {
-        axios.get('/mypost',{
-            headers:{
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
-            }
-        }).then(results => {
-            console.log(results.data.post)
-            setData(results.data.post)
+        // console.log("çalışıyor")
+        axios.get('/user/5fb28f45b0d6874b3ebcb518')
+        .then(results => {
+            // console.log("bu o", results.data.posts)
+            setData(results.data.posts)
             
         })
 
@@ -30,7 +29,7 @@ const User = () => {
 
     return (
         <div className={styles.profile}>
-            <p className={styles.title}>{state?state.nick:"loading"}</p>
+            <p className={styles.title}>{data&&data[0].postedBy.nick}</p>
             <div className={styles.menu}>
             <NavLink to="/" className={styles.menualt}>takip et</NavLink>
             <NavLink to="/" className={styles.menualt}>engelle başlıklarını</NavLink>
@@ -74,7 +73,7 @@ const User = () => {
                         </div>
                         <div className={styles.nick}>
                             <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                            <Link  to="/"  className={styles.name}> {state.nick}</Link>
+                            <Link  to="/"  className={styles.name}> {items.postedBy.nick}</Link>
                         </div>
                         </div>
                     </div>
