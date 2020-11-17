@@ -56,9 +56,7 @@ router.get('/post/:postId',(req,res) => {
 })
 
 router.get('/user/:userId',(req,res) => {
-    //userId
-    //postfind
-    //populate User
+    
     const {userId} = req.params;
     
     Post.find({postedBy:userId})
