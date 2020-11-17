@@ -1,11 +1,36 @@
-import React from "react"
+import React,{useContext,useEffect,useState} from "react"
 import styles from "./Profile.module.css"
 import {NavLink,Link} from "react-router-dom"
+import {UserContext} from "../../App"
+import axios from "axios"
 
 const Profile = () => {
+
+    const {state,dispatch} = useContext(UserContext)
+
+    const [data,setData] = useState()
+
+
+    useEffect(() => {
+        axios.get('/mypost',{
+            headers:{
+                "Authorization":"Bearer "+localStorage.getItem("jwt")
+            }
+        }).then(results => {
+            console.log(results.data.post)
+            setData(results.data.post)
+            
+        })
+
+
+
+    },[])
+
+    
+
     return (
         <div className={styles.profile}>
-            <p className={styles.title}>hintlikaraemre</p>
+            <p className={styles.title}>{state?state.nick:"loading"}</p>
             <div className={styles.menu}>
             <NavLink to="/" className={styles.menualt}>takip et</NavLink>
             <NavLink to="/" className={styles.menualt}>engelle başlıklarını</NavLink>
@@ -33,96 +58,30 @@ const Profile = () => {
 
 
 
-            <div style={{width:"75%" , marginTop:"30px"}}>
-            <Link to="/" className={styles.entrytitle} href="#">sağlık bakanlığı'nın ankara suyu raporu</Link>
-            <p className={styles.entrybody}>diyor ki;
-            "demir, nitrat, aluminyum, arsenik, perfringens, enterokok, eschericis coli ve koliform bakteri parametreleri yönünden insani tüketim amaçlı sular hakkında yönetmelikte belirtilen sınır değerlere göre uygunsuz ve serbest klor düzeyinin yetersiz olduğu saptanmıştır."
-            görüldüğü üzere içinde bir biz yokuz.
-melih? yaşıyor musun? </p>
+            {data.map(items => {
+                return (
+                    <div style={{width:"75%" , marginTop:"30px"}}>
+                    <Link to="/" className={styles.entrytitle} href="#">{items.title}</Link>
+                    <p className={styles.entrybody}>{items.body}</p>
+        
+        
+                        <div className={styles.bottomMenu}>
+                        <div className={styles.icons}>
+                        <img src="/facebook.svg" alt="facebook" />
+                        <img src="/twitter.svg" alt="facebook" />
+                        <img className={styles.rotatearrow} src="/arrow.svg" alt="facebook" />
+                        <img  src="/arrow.svg" alt="facebook" />
+                        </div>
+                        <div className={styles.nick}>
+                            <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
+                            <Link  to="/"  className={styles.name}> {state.nick}</Link>
+                        </div>
+                        </div>
+                    </div>
+                )
+            })}
 
 
-                <div className={styles.bottomMenu}>
-                <div className={styles.icons}>
-                <img src="/facebook.svg" alt="facebook" />
-                <img src="/twitter.svg" alt="facebook" />
-                <img className={styles.rotatearrow} src="/arrow.svg" alt="facebook" />
-                <img  src="/arrow.svg" alt="facebook" />
-                </div>
-                <div className={styles.nick}>
-                    <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> sanikmagdur</Link>
-                </div>
-                </div>
-            </div>
-
-
-            <div style={{width:"75%" , marginTop:"30px"}}>
-            <Link to="/" className={styles.entrytitle} href="#">sağlık bakanlığı'nın ankara suyu raporu</Link>
-            <p className={styles.entrybody}>diyor ki;
-            "demir, nitrat, aluminyum, arsenik, perfringens, enterokok, eschericis coli ve koliform bakteri parametreleri yönünden insani tüketim amaçlı sular hakkında yönetmelikte belirtilen sınır değerlere göre uygunsuz ve serbest klor düzeyinin yetersiz olduğu saptanmıştır."
-            görüldüğü üzere içinde bir biz yokuz.
-melih? yaşıyor musun? </p>
-
-
-                <div className={styles.bottomMenu}>
-                <div className={styles.icons}>
-                <img src="/facebook.svg" alt="facebook" />
-                <img src="/twitter.svg" alt="facebook" />
-                <img className={styles.rotatearrow} src="/arrow.svg" alt="facebook" />
-                <img  src="/arrow.svg" alt="facebook" />
-                </div>
-                <div className={styles.nick}>
-                    <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> sanikmagdur</Link>
-                </div>
-                </div>
-            </div>
-
-
-            <div style={{width:"75%" , marginTop:"30px"}}>
-            <Link to="/" className={styles.entrytitle} href="#">sağlık bakanlığı'nın ankara suyu raporu</Link>
-            <p className={styles.entrybody}>diyor ki;
-            "demir, nitrat, aluminyum, arsenik, perfringens, enterokok, eschericis coli ve koliform bakteri parametreleri yönünden insani tüketim amaçlı sular hakkında yönetmelikte belirtilen sınır değerlere göre uygunsuz ve serbest klor düzeyinin yetersiz olduğu saptanmıştır."
-            görüldüğü üzere içinde bir biz yokuz.
-melih? yaşıyor musun? </p>
-
-
-                <div className={styles.bottomMenu}>
-                <div className={styles.icons}>
-                <img src="/facebook.svg" alt="facebook" />
-                <img src="/twitter.svg" alt="facebook" />
-                <img className={styles.rotatearrow} src="/arrow.svg" alt="facebook" />
-                <img  src="/arrow.svg" alt="facebook" />
-                </div>
-                <div className={styles.nick}>
-                    <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> sanikmagdur</Link>
-                </div>
-                </div>
-            </div>
-
-
-            <div style={{width:"75%" , marginTop:"30px"}}>
-            <Link to="/" className={styles.entrytitle} href="#">sağlık bakanlığı'nın ankara suyu raporu</Link>
-            <p className={styles.entrybody}>diyor ki;
-            "demir, nitrat, aluminyum, arsenik, perfringens, enterokok, eschericis coli ve koliform bakteri parametreleri yönünden insani tüketim amaçlı sular hakkında yönetmelikte belirtilen sınır değerlere göre uygunsuz ve serbest klor düzeyinin yetersiz olduğu saptanmıştır."
-            görüldüğü üzere içinde bir biz yokuz.
-melih? yaşıyor musun? </p>
-
-
-                <div className={styles.bottomMenu}>
-                <div className={styles.icons}>
-                <img src="/facebook.svg" alt="facebook" />
-                <img src="/twitter.svg" alt="facebook" />
-                <img className={styles.rotatearrow} src="/arrow.svg" alt="facebook" />
-                <img  src="/arrow.svg" alt="facebook" />
-                </div>
-                <div className={styles.nick}>
-                    <Link to="/"  className={styles.date}>06.01.2018 13:05 ~ 13:53</Link>
-                    <Link  to="/"  className={styles.name}> sanikmagdur</Link>
-                </div>
-                </div>
-            </div>
 
 
 
